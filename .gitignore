@@ -45,3 +45,6 @@
 .vs/GTerm Music Player/v16/.suo
 .vs/GTerm Music Player/v16/.suo
 .vs/GTerm Music Player/v16/Browse.VC.db
+*.pdb
+*.iobj
+*.tlog

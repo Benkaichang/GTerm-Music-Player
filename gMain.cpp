@@ -18,6 +18,14 @@ gMain::~gMain()
 
 void gMain::OnButtonClicked(wxCommandEvent& evt)
 {
-	m_list1->AppendString(m_text1->GetValue());
+	if (m_text1->GetValue().Len() != 0)
+	{
+		m_list1->AppendString(m_text1->GetValue());
+		m_text1->Clear();
+	}
+	else
+	{
+		m_list1->AppendString(wxString("啥都没有"));
+	}
 	evt.Skip();
 }
