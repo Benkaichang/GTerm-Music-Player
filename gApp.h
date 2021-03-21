@@ -8,8 +8,6 @@ class gApp : public wxApp
 public: 
 	gApp();
 	~gApp();
-
-public:
 	virtual bool OnInit();
 
 private:
