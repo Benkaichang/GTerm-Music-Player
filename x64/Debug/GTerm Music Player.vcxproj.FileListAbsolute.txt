@@ -1,3 +1,0 @@
-D:\gihub\GTerm-Music-Player\x64\Debug\GTerm Music Player.exe
-D:\gihub\GTerm-Music-Player\x64\Debug\GTerm Music Player.exe.lastcodeanalysissucceeded
-D:\gihub\GTerm-Music-Player\x64\Debug\NativeCodeAnalysis.read.1.tlog
