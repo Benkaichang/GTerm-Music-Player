@@ -61,4 +61,9 @@
   <ItemGroup>
     <QtMoc Include="GTermMainWindow.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ui_GTermMainWindow.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

@@ -10,14 +10,11 @@
 #define UI_GTERMMAINWINDOW_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QScrollBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,44 +23,38 @@ class Ui_GTermMainWindow
 {
 public:
     QWidget *centralwidget;
-    QScrollBar *horizontalScrollBar;
+    QPushButton *pushButton;
     QMenuBar *menubar;
-    QMenu *menuHello;
     QStatusBar *statusbar;
-    QToolBar *toolBar;
 
     void setupUi(QMainWindow *GTermMainWindow)
     {
         if (GTermMainWindow->objectName().isEmpty())
             GTermMainWindow->setObjectName(QString::fromUtf8("GTermMainWindow"));
-        GTermMainWindow->resize(1280, 720);
+        GTermMainWindow->resize(622, 408);
         GTermMainWindow->setMaximumSize(QSize(1080, 1920));
         centralwidget = new QWidget(GTermMainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setMaximumSize(QSize(1080, 1920));
-        horizontalScrollBar = new QScrollBar(centralwidget);
-        horizontalScrollBar->setObjectName(QString::fromUtf8("horizontalScrollBar"));
-        horizontalScrollBar->setGeometry(QRect(50, 360, 160, 16));
-        horizontalScrollBar->setOrientation(Qt::Horizontal);
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(250, 160, 75, 23));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Arial"));
+        pushButton->setFont(font);
+        pushButton->setCheckable(false);
         GTermMainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GTermMainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 622, 22));
-        menuHello = new QMenu(menubar);
-        menuHello->setObjectName(QString::fromUtf8("menuHello"));
+        menubar->setGeometry(QRect(0, 0, 622, 23));
         GTermMainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(GTermMainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         GTermMainWindow->setStatusBar(statusbar);
-        toolBar = new QToolBar(GTermMainWindow);
-        toolBar->setObjectName(QString::fromUtf8("toolBar"));
-        GTermMainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
-
-        menubar->addAction(menuHello->menuAction());
-        menuHello->addSeparator();
-        menuHello->addSeparator();
 
         retranslateUi(GTermMainWindow);
+        QObject::connect(pushButton, SIGNAL(clicked()), GTermMainWindow, SLOT(slot1()));
+        QObject::connect(pushButton, &QPushButton::clicked, pushButton, qOverload<>(&QPushButton::animateClick));
 
         QMetaObject::connectSlotsByName(GTermMainWindow);
     } // setupUi
@@ -71,8 +62,7 @@ public:
     void retranslateUi(QMainWindow *GTermMainWindow)
     {
         GTermMainWindow->setWindowTitle(QCoreApplication::translate("GTermMainWindow", "GTerm Music Player", nullptr));
-        menuHello->setTitle(QCoreApplication::translate("GTermMainWindow", "Hello", nullptr));
-        toolBar->setWindowTitle(QCoreApplication::translate("GTermMainWindow", "toolBar", nullptr));
+        pushButton->setText(QCoreApplication::translate("GTermMainWindow", "Hello", nullptr));
     } // retranslateUi
 
 };

@@ -49,3 +49,6 @@
 *.iobj
 *.tlog
 *.ipch
+*.Debug
+src/build-GTermMusicPlayer-Desktop_Qt_6_0_2_MSVC2019_64bit-Debug/Makefile
+*.Release
