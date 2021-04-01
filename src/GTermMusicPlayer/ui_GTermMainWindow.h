@@ -44,24 +44,31 @@ public:
             GTermMainWindow->setObjectName(QString::fromUtf8("GTermMainWindow"));
         GTermMainWindow->resize(622, 408);
         GTermMainWindow->setMaximumSize(QSize(1080, 1920));
+
         actionAbout = new QAction(GTermMainWindow);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
+
         centralwidget = new QWidget(GTermMainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setMaximumSize(QSize(1080, 1920));
+
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         groupBox->setGeometry(QRect(0, 0, 621, 371));
+
         pushButton = new QPushButton(groupBox);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(10, 10, 131, 51));
+
         QFont font;
         font.setBold(true);
+
         pushButton->setFont(font);
         pushButton_2 = new QPushButton(groupBox);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(160, 10, 131, 51));
         pushButton_2->setFont(font);
+
         label = new QLabel(groupBox);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(60, 150, 91, 31));
@@ -69,15 +76,18 @@ public:
         font1.setPointSize(14);
         label->setFont(font1);
         GTermMainWindow->setCentralWidget(centralwidget);
+
         menubar = new QMenuBar(GTermMainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 622, 22));
         menuHello = new QMenu(menubar);
         menuHello->setObjectName(QString::fromUtf8("menuHello"));
         GTermMainWindow->setMenuBar(menubar);
+
         statusbar = new QStatusBar(GTermMainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         GTermMainWindow->setStatusBar(statusbar);
+
         toolBar = new QToolBar(GTermMainWindow);
         toolBar->setObjectName(QString::fromUtf8("toolBar"));
         GTermMainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
@@ -88,6 +98,7 @@ public:
         menuHello->addAction(actionAbout);
 
         retranslateUi(GTermMainWindow);
+
         QObject::connect(pushButton, &QPushButton::clicked, groupBox, qOverload<>(&QGroupBox::show));
         QObject::connect(pushButton, &QPushButton::clicked, label, qOverload<>(&QLabel::close));
         QObject::connect(actionAbout, &QAction::triggered, groupBox, qOverload<>(&QGroupBox::close));
