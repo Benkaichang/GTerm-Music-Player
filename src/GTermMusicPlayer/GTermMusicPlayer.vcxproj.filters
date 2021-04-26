@@ -39,8 +39,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GTermMainWindow.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="GTermMainWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -56,14 +60,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="GTermMainWindow.ui" />
+    <QtMoc Include="GTermMainWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="GTermMainWindow.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ui_GTermMainWindow.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
+    <QtUic Include="GTermMainWindow.ui">
+      <Filter>Generated Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>
